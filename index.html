@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Project Idea Generator</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ===================== APP CONTAINER ===================== -->
+<div class="app-container">
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar">
+
+    <div class="brand">
+      <div class="logo">AI</div>
+      <div class="brand-text">
+        <h2>Idea Generator</h2>
+        <p>Engineering Projects</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active">Generate</button>
+      <button class="nav-item">Saved Ideas</button>
+      <button class="nav-item">History</button>
+      <button class="nav-item">Settings</button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>Supports all engineering branches</p>
+    </div>
+
+  </aside>
+
+  <!-- ===================== MAIN ===================== -->
+  <main class="main">
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="header">
+      <h1>AI Project Idea Generator</h1>
+      <p>Generate unique, non-repeating, real-world engineering project ideas</p>
+    </header>
+
+    <!-- ===================== INPUT PANEL ===================== -->
+    <section class="panel">
+
+      <div class="panel-header">
+        <h3>Generate Ideas</h3>
+        <p>Select your branch and preferences</p>
+      </div>
+
+      <div class="form-grid">
+
+        <!-- Branch -->
+        <div class="field">
+          <label>Branch</label>
+          <select id="branch">
+
+            <optgroup label="Core">
+              <option value="CSE">Computer Science</option>
+              <option value="IT">Information Technology</option>
+              <option value="AI_DS">AI & Data Science</option>
+              <option value="CYBER">Cybersecurity</option>
+            </optgroup>
+
+            <optgroup label="Electronics">
+              <option value="ECE">ECE</option>
+              <option value="EEE">EEE</option>
+              <option value="EMBEDDED">Embedded Systems</option>
+            </optgroup>
+
+            <optgroup label="Mechanical">
+              <option value="MECH">Mechanical</option>
+              <option value="AUTO">Automobile</option>
+              <option value="AERO">Aerospace</option>
+            </optgroup>
+
+            <optgroup label="Civil">
+              <option value="CIVIL">Civil</option>
+              <option value="ARCH">Architecture</option>
+            </optgroup>
+
+            <optgroup label="Others">
+              <option value="CHEM">Chemical</option>
+              <option value="BIOTECH">Biotech</option>
+              <option value="AGRI">Agriculture</option>
+              <option value="MARINE">Marine</option>
+              <option value="TEXTILE">Textile</option>
+            </optgroup>
+
+          </select>
+        </div>
+
+        <!-- Subdomain -->
+        <div class="field">
+          <label>Sub Domain</label>
+          <select id="subBranch"></select>
+        </div>
+
+        <!-- Level -->
+        <div class="field">
+          <label>Project Level</label>
+          <select id="level">
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Advanced</option>
+          </select>
+        </div>
+
+        <!-- Count -->
+        <div class="field">
+          <label>Number of Ideas</label>
+          <select id="count">
+            <option>1</option>
+            <option>3</option>
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="actions">
+        <button id="generateBtn" class="btn primary">Generate Ideas</button>
+        <button id="regenBtn" class="btn secondary">Regenerate</button>
+      </div>
+
+    </section>
+
+    <!-- ===================== LOADER ===================== -->
+    <div id="loader" class="loader hidden">
+      <div class="spinner"></div>
+      <p>Generating intelligent ideas...</p>
+    </div>
+
+    <!-- ===================== RESULTS ===================== -->
+    <section id="results" class="results-grid"></section>
+
+  </main>
+
+</div>
+
+<!-- ===================== DRAWER ===================== -->
+<div id="drawer" class="drawer hidden">
+
+  <div class="drawer-box">
+
+    <button class="close-btn" onclick="closeDrawer()">✕</button>
+
+    <div id="drawerContent">
+
+      <!-- TITLE -->
+      <h2>Project Title</h2>
+
+      <!-- DESCRIPTION -->
+      <section class="detail-block">
+        <h3>Description</h3>
+        <p>Project description here...</p>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="detail-block">
+        <h3>Features</h3>
+        <ul>
+          <li>Feature 1</li>
+          <li>Feature 2</li>
+        </ul>
+      </section>
+
+      <!-- TECH -->
+      <section class="detail-block">
+        <h3>Tech Stack</h3>
+        <p>Tech details</p>
+      </section>
+
+      <!-- ROADMAP -->
+      <section class="detail-block">
+        <h3>Roadmap</h3>
+        <ol>
+          <li>Step 1</li>
+          <li>Step 2</li>
+        </ol>
+      </section>
+
+      <!-- RESOURCES -->
+      <section class="detail-block">
+        <h3>Resources</h3>
+        <ul>
+          <li>YouTube</li>
+          <li>Docs</li>
+        </ul>
+      </section>
+
+      <!-- RESUME VALUE -->
+      <section class="detail-block">
+        <h3>Resume Value</h3>
+        <p>This project demonstrates real-world skills.</p>
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===================== SCRIPT ===================== -->
+<script src="script.js"></script>
+
+</body>
+</html>
